@@ -1,0 +1,5 @@
+select relnamespace::regnamespace as schema_name, 
+       relname as table_name
+from pg_class 
+where 'autovacuum_enabled=false' = any(reloptions); 
+
